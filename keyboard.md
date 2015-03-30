@@ -14,38 +14,37 @@ Hotkey | IDEA | Sublime | XCode
 8      | | |
 9      | | |
 A      | Select All | | 
-B      | Run (Debug) | |
+B      | Build (Rebuild All) | |
 C      | Copy | | 
-D      | Goto Definition (Navigate Back) | |
+D      | Goto Definition (Navigate Back) | Quick Add Next |
 E      | Replace (Replace in Files) | |
 F      | Find (Find in Files) | |
 G      | Find Next (Find Previous) | |
-H      | _Hide_ | |
-I      | Search Increment | |
+H      | _Hide_ | _Hide_ |
+I      | Search Increment | Search Increment |
 J      | | |
 K      | | |
 L      | Goto Line | |
 M      | _Minimize_ | |
-N      | New |         |
-O      | Navigate File | Open |
-P      | Parameters | Goto Anything |
+N      | New | |
+O      | Navigate File (Open) | Goto Anything (Open) |
+P      | Parameters | |
 Q      | _Quit_ | |
-R      | Refactor... | Quick Add Next |
+R      | Run (Debug) | |
 S      | Save (Save All) | |
-T      | | |
-U      | Build (Rebuild All) | |
+T      | Next Bookmark (Toggle Bookmark) | |
+U      | | |
 V      | Paste | |
 W      | Close (Close Others) | |
 X      | Cut | |
 Y      | Delete Line | |
-Z      | Undo (Redo )| |
+Z      | Undo (Redo) | |
 /      | Comment | |
 ~      | | |
 [      | Move Caret to Block Code Start | Jump To Matching Bracket |
 ]      | Move Caret to Block Code End | Jump To Matching Bracket |
 
-* Next Bookmark
-* Toggle Bookmark
+* Refactor
 * Toggle Breakpoint 
 * Step Over
 * Step Into
