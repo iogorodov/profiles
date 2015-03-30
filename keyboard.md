@@ -17,7 +17,7 @@ A      | Select All | |
 B      | Build (Rebuild All) | |
 C      | Copy | | 
 D      | Goto Definition (Navigate Back) | Quick Add Next |
-E      | Replace (Replace in Files) | |
+E      | Replace (Replace in Files) | Replace (Replace Next) |
 F      | Find (Find in Files) | |
 G      | Find Next (Find Previous) | |
 H      | _Hide_ | _Hide_ |
