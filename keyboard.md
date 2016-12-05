@@ -1,8 +1,8 @@
 Keyboard Shortcuts
 ==================
 
-Hotkey | IDEA | Sublime | XCode
--------|------|---------|------
+Hotkey | IDEA | Sublime | XCode | Visual Studio
+-------|------|---------|-------|---------
 0      | Tool Window Preview | |
 1      | Tool Window Project | Show/Hide Side Bar |
 2      | Tool Window Android | |
