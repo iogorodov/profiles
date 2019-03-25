@@ -1,0 +1,18 @@
+[user]
+	email = iogorodov@gmail.com
+	name = Ivan Ogorodov
+
+[alias]
+    l = !"git --no-pager log -10 --format='format:%C(auto,yellow)%h%Creset %C(auto,cyan)%<(14,trunc)%an%Creset  %C(auto,normal)%s%Creset   %C(auto,bold black)%<(16)%ar%Creset %C(auto,green)%D%Creset'"
+    s = !"git status -s && git --no-pager log -3 --format='format:%C(auto,yellow)%h%Creset %C(auto,cyan)%<(14,trunc)%an%Creset  %C(auto,normal)%s%Creset   %C(auto,bold black)%<(16)%ar%Creset %C(auto,green)%D%Creset'"
+    lr = !"git --no-pager log -20 --reverse --format='format:%C(auto,yellow)%h%Creset %C(auto,cyan)%<(14,trunc)%an%Creset  %C(auto,normal)%s%Creset   %C(auto,bold black)%<(16)%ar%Creset'"
+    ll = log --date='format:%d-%m-%Y %H:%m:%S' --name-status --format='format:%C(auto,yellow)%h%Creset  %C(auto,bold black)%ad%Creset  %C(auto,cyan)%<(14,trunc)%an%Creset  %C(auto,normal)%s%Creset'
+    lg = log --graph --abbrev-commit --decorate --format='format:%C(auto,yellow)%h%Creset %C(auto,cyan)%<(14,trunc)%an%Creset  %C(auto,normal)%<(40,trunc)%s%Creset %C(auto)%D%Creset'
+    sl = !"git status -s && git l"
+
+[merge]
+    tool = sublimerge
+
+[mergetool "sublimerge"]
+    cmd = \"c:\\Program Files\\Sublime Text 3\\subl.exe\" -n --wait \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
+    trustExitCode = false
