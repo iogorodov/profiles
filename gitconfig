@@ -1,7 +1,3 @@
-[user]
-	email = iogorodov@gmail.com
-	name = Ivan Ogorodov
-
 [alias]
     l = !"git --no-pager log -10 --format='format:%C(auto,yellow)%h%Creset %C(auto,cyan)%<(14,trunc)%an%Creset  %C(auto,normal)%s%Creset   %C(auto,bold black)%<(16)%ar%Creset %C(auto,green)%D%Creset'"
     s = !"git status -s && git --no-pager log -3 --format='format:%C(auto,yellow)%h%Creset %C(auto,cyan)%<(14,trunc)%an%Creset  %C(auto,normal)%s%Creset   %C(auto,bold black)%<(16)%ar%Creset %C(auto,green)%D%Creset'"
