@@ -5,6 +5,8 @@
     ll = log --date='format:%d-%m-%Y %H:%m:%S' --name-status --format='format:%C(auto,yellow)%h%Creset  %C(auto,bold black)%ad%Creset  %C(auto,cyan)%<(14,trunc)%an%Creset  %C(auto,normal)%s%Creset'
     lg = log --graph --abbrev-commit --decorate --format='format:%C(auto,yellow)%h%Creset %C(auto,cyan)%<(14,trunc)%an%Creset  %C(auto,normal)%<(40,trunc)%s%Creset %C(auto)%D%Creset'
     sl = !"git status -s && git l"
+    cs = !"git submodule foreach git commit -am ${1} && git add -A && git commit -am ${1}"
+    issues = "!f() { git log ${1}..HEAD --format=tformat:%s | grep -o '[A-Z][A-Z]*-[0-9][0-9]*' | sort -u | tr '\n' , | sed 's/,/, /g; s/,[[:space:]]*$//'; }; f"
 
 [merge]
     tool = sublimerge
