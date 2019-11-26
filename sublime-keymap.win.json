@@ -1,0 +1,8 @@
+[
+    { "keys": ["ctrl+o"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
+    { "keys": ["ctrl+p"], "command": "prompt_select_workspace" },    
+    { "keys": ["ctrl+shift+o"], "command": "prompt_open_file" },
+    { "keys": ["ctrl+shift+k"], "command": "toggle_sidebar2" },
+    { "keys": ["ctrl+shift+w"], "command": "close_others" },
+    { "keys": ["alt+enter"], "command": "toggle_fullscreen2" },
+]
