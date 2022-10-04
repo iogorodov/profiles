@@ -15,7 +15,8 @@ function setup {
     local port=$2
 
     apt update
-    apt install -y wireguard
+    apt install -y wireguard nginx
+    
     local private_key=$(wg genkey)
 
     echo "[Interface]" > /etc/wireguard/wg0.conf
@@ -44,6 +45,9 @@ function setup {
     systemctl enable wg-quick@wg0.service
     systemctl start wg-quick@wg0.service
     systemctl status wg-quick@wg0.service
+    
+    rm -rf /var/www/html/*
+    
 }
 
 function find_peer_ip {
@@ -81,20 +85,21 @@ function add {
 
     wg set wg0 peer $peer_public_key allowed-ips $peer_ip
 
+    echo "wg-$peer_ip.conf"
     echo "[Interface]"
     echo "PrivateKey = $peer_private_key"
     echo "Address = $peer_ip/32"
     echo "DNS = $dns_server"
-
+    echo
     echo "[Peer]"
     echo "PublicKey = $server_public_key"
-    echo "AllowedIPs = $dns_server/32 1.0.0.0/8, 2.0.0.0/8, 3.0.0.0/8, 4.0.0.0/6, 8.0.0.0/7, 11.0.0.0/8, 12.0.0.0/6, 16.0.0.0/4, 32.0.0.0/3, 64.0.0.0/2, 128.0.0.0/3, 160.0.0.0/5, 168.0.0.0/6, 172.0.0.0/12, 172.32.0.0/11, 172.64.0.0/10, 172.128.0.0/9, 173.0.0.0/8, 174.0.0.0/7, 176.0.0.0/4, 192.0.0.0/9, 192.128.0.0/11, 192.160.0.0/13, 192.169.0.0/16, 192.170.0.0/15, 192.172.0.0/14, 192.176.0.0/12, 192.192.0.0/10, 193.0.0.0/8, 194.0.0.0/7, 196.0.0.0/6, 200.0.0.0/5, 208.0.0.0/4"
+    echo "AllowedIPs = $dns_server/32, 1.0.0.0/8, 2.0.0.0/8, 3.0.0.0/8, 4.0.0.0/6, 8.0.0.0/7, 11.0.0.0/8, 12.0.0.0/6, 16.0.0.0/4, 32.0.0.0/3, 64.0.0.0/2, 128.0.0.0/3, 160.0.0.0/>
     echo "Endpoint = $public_ip:$server_port"
 }
 
-if [[ "$1" -eq "setup" ]]; then
+if [ "$1" == "setup" ]; then
     setup $ADDRESS $PORT
-elif [[ "$1" -eq "add" ]]; then
+elif [ "$1" == "add" ]; then
     add
 else
     print_usage
