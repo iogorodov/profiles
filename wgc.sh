@@ -15,7 +15,7 @@ function setup {
     local port=$2
 
     apt update
-    apt install -y wireguard nginx
+    apt install -y wireguard
     
     local private_key=$(wg genkey)
 
@@ -45,9 +45,6 @@ function setup {
     systemctl enable wg-quick@wg0.service
     systemctl start wg-quick@wg0.service
     systemctl status wg-quick@wg0.service
-    
-    rm -rf /var/www/html/*
-    
 }
 
 function find_peer_ip {
