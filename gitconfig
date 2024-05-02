@@ -22,3 +22,10 @@
 	required = true
 [pull]
 	ff = only
+[init]
+    defaultBranch = master
+[user]
+    name =
+    email =
+[includeIf "gitdir:~/Projects/foo/**"]
+    path = ~/Projects/foo/.gitconfig
