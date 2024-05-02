@@ -20,12 +20,34 @@ zstyle ':vcs_info:*' unstagedstr '*'
 zstyle ':vcs_info:*' stagedstr '+'
 zstyle ':vcs_info:*' enable git
 
-export PATH="/usr/local/opt/node@16/bin:$PATH"
+x() {
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)   tar xjf $1     ;;
+            *.tar.gz)    tar xzf $1     ;;
+            *.bz2)       bunzip2 $1     ;;
+            *.gz)        gunzip $1      ;;
+            *.tar)       tar xf $1      ;;
+            *.tbz2)      tar xjf $1     ;;
+            *.tgz)       tar xzf $1     ;;
+            *.zip)       unzip $1       ;;
+            *.Z)         uncompress $1  ;;
+            # *.rar)       rar x $1      ;;
+            # *.7z)        7z x $1       ;;
+            *)           echo "'$1' cannot be extracted via x()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
+}
+
+export PATH="/opt/homebrew/opt/node@20/bin:/opt/homebrew/bin:$PATH"
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export PROMPT='%F{green}%2~%f$vcs_info_msg_0_ %# '
 
 alias ll='ls -Galh'
 alias ..='cd ..'
 alias ...='cd ../..'
+alias g=git
 
 autoload -Uz compinit && compinit
