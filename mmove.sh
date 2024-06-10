@@ -40,7 +40,7 @@ function get_id3_tag {
 
 function format_name {
     file="$1"
-    tags=$(id3info "${file}")
+    tags=$(id3info "${file}" | iconv -c -t UTF-8//TRANSLIT)
     format="$2"
     result="${format}"
 
